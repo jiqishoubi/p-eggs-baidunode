@@ -61,8 +61,12 @@ module.exports = appInfo => {
       // '.avi',
       fileExtensions: [
         '.MP3', '.MP4', '.AVI',
-        '.m4v', '.mov', '3gp', 'mpeg1', 'mpeg4', 'flv', 'mjpeg', 'rmvb', 'wmv', 'f4v', 'mkv', 'rm',
-        '.M4V', '.MOV', '3GP', 'MPEG1', 'MPEG4', 'FLV', 'MJPEG', 'RMVB', 'WMV', 'F4V', 'MKV', 'RM'
+
+        '.m4v', '.mov', '.3gp', '.mpeg1', '.mpeg4', '.flv', '.mjpeg', '.rmvb', '.wmv', '.f4v', '.mkv', '.rm',
+        '.M4V', '.MOV', '.3GP', '.MPEG1', '.MPEG4', '.FLV', '.MJPEG', '.RMVB', '.WMV', '.F4V', '.MKV', '.RM',
+
+        '.asf', '.asx', '.dat', '.vob', '.mpeg', '.mpg', '.navi',
+        '.ASF', '.ASX', '.DAT', '.VOB', '.MPEG', '.MPG', '.NAVI',
       ],
     }
   };

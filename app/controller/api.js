@@ -63,11 +63,12 @@ class ApiController extends Controller {
     let newPath = filepath.split('.')[0] + ('' + new Date().getTime()) + '.' + filepath.split('.')[1]
 
     //降低视频质量
+    let startStamp = new Date().getTime()
     const zipVideo = (filepath) => {
       return new Promise((resolve) => {
         let command = ffmpeg(filepath)
-          .size('40%')
-          .audioBitrate('64k')
+          // .size('40%')
+          .size('640x?')
           .save(newPath)
           .on('end', async function (res) {
             resolve(res)
@@ -75,6 +76,9 @@ class ApiController extends Controller {
       })
     }
     await zipVideo(filepath)
+    let endStamp = new Date().getTime()
+    let dur = endStamp - startStamp
+    console.log('压缩视频时间', dur)
     //降低视频质量 end
 
     let base64 = await utils.fileToBase64(newPath)
