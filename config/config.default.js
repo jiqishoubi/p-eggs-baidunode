@@ -68,7 +68,13 @@ module.exports = appInfo => {
         '.asf', '.asx', '.dat', '.vob', '.mpeg', '.mpg', '.navi',
         '.ASF', '.ASX', '.DAT', '.VOB', '.MPEG', '.MPG', '.NAVI',
       ],
-    }
+    },
+
+    logger: {
+      level: 'DEBUG',
+      allowDebugAtProd: true,
+      outputJSON: true
+    },
   };
 
 

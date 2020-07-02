@@ -22,8 +22,8 @@ class ApiController extends Controller {
       data: { appid: constjs['faceH5'].AppID },
       dataType: 'json',    // 明确告诉 HttpClient 以 JSON 格式处理返回的响应 body
     })
-
     console.log(result.data)
+
     //处理
     let returnData = null
     if (
@@ -100,11 +100,19 @@ class ApiController extends Controller {
     console.log('*************百度验证完毕*************')
     console.log(result.data)
 
+    // //插入日志
+    // ctx.logger.warn(JSON.stringify(result.data));
+
     let err_no = result.data.err_no
 
     //处理
     let returnData = null
     if (err_no == 0) {
+      if (result.data.result && result.data.result.pic_list) {
+        let pic_list = result.data.result.pic_list
+        let pic_list2 = [pic_list[pic_list.length - 1]]
+        result.data.result.pic_list = pic_list2
+      }
       returnData = {
         code: 200,
         systemMessage: '成功',

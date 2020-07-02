@@ -8,12 +8,11 @@
     "stop": "egg-scripts stop --title=egg-server-baidunode",
     "dev": "egg-bin dev --port=7238",
     "debug": "egg-bin debug",
-    "test": "npm run lint -- --fix && npm run test-local",
-    "test-local": "egg-bin test",
     "cov": "egg-bin cov",
     "lint": "eslint .",
     "ci": "npm run lint && npm run cov",
-    "autod": "autod"
+    "autod": "autod",
+    "restart": "npm run stop && npm run start"
   },
   "egg": {
     "declarations": true
@@ -21,6 +20,7 @@
   "dependencies": {
     "egg": "^2.15.1",
     "egg-cors": "^2.2.3",
+    "egg-logger": "^2.4.2",
     "egg-scripts": "^2.11.0",
     "fluent-ffmpeg": "^2.1.2",
     "mime-types": "^2.1.26"
