@@ -98,10 +98,6 @@ class ApiController extends Controller {
       timeout: 120000,
     })
     console.log('*************百度验证完毕*************')
-    console.log(result.data)
-
-    // //插入日志
-    // ctx.logger.warn(JSON.stringify(result.data));
 
     let err_no = result.data.err_no
 
@@ -126,6 +122,10 @@ class ApiController extends Controller {
       }
     }
     console.log(returnData)
+
+    //插入日志
+    // ctx.logger.warn(JSON.stringify(returnData));
+    ctx.logger.info(JSON.stringify(returnData));
 
     //返回
     ctx.status = 200 //状态

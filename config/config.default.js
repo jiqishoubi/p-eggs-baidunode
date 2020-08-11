@@ -71,7 +71,7 @@ module.exports = appInfo => {
     },
 
     logger: {
-      level: 'DEBUG',
+      level: 'INFO',
       allowDebugAtProd: true,
       outputJSON: true
     },
